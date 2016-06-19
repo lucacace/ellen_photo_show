@@ -11,13 +11,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160616201857) do
+ActiveRecord::Schema.define(version: 20160619193131) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "shows", force: :cascade do |t|
+    t.string  "name"
+    t.string  "date"
+    t.string  "type"
+    t.string  "sponser"
+    t.string  "jury"
+    t.string  "venue"
+    t.string  "street"
+    t.string  "city"
+    t.string  "state"
+    t.integer "zip_code"
+    t.string  "name_chair_photography"
+    t.integer "num_classes"
+    t.string  "num_placements"
+    t.integer "photo_size_min"
+    t.integer "photo_size_max"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "username"
+    t.string   "password"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip_code"
+    t.integer  "phone_number"
+    t.string   "email"
+    t.string   "affiliation"
+    t.string   "local_newspaper"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

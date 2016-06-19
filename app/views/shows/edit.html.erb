@@ -1,0 +1,35 @@
+<h1>Editing show</h1>
+ 
+<%= form_for :show, url: show_path(@show), method: :patch do |f| %>
+ 
+  <% if @show.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@show.errors.count, "error") %> prohibited
+        this show from being saved:
+      </h2>
+      <ul>
+        <% @show.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :venue %><br>
+    <%= f.text_area :venue %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', shows_path %>

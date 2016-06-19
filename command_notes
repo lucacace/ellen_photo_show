@@ -1,0 +1,16 @@
+command_notes
+
+rails generate migration CreateManagers
+
+bin/rails server
+
+bin/rake db:migrate
+
+select * from Users;
+select name, venue from Shows;
+
+
+postgres -D /usr/local/var/postgres/
+
+
+pgAdmin: displays the database
