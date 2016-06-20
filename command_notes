@@ -14,3 +14,8 @@ postgres -D /usr/local/var/postgres/
 
 
 pgAdmin: displays the database
+
+
+
+
+bundle install
